@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="navy_500">#122159</color>
+    <color name="navy_200">#444886</color>
+    <color name="navy_700">#000030</color>
+    <color name="peach_500">#ff9558</color>
+    <color name="peach_200">#ffc686</color>
+    <color name="peach_700">#c7662b</color>
+    <color name="white">#ffffff</color>
+    <color name="black">#000000</color>
+</resources>
+
