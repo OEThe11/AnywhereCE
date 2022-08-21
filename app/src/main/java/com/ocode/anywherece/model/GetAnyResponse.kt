@@ -17,5 +17,5 @@ data class GetAnyResponse(
     val Redirect: String,
     val RelatedTopics: List<RelatedTopic>,
     val Results: List<Any>,
-    val Type: String,
+    val Type: String
 )

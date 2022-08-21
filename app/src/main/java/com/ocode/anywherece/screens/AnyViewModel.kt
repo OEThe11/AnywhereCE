@@ -3,8 +3,6 @@ package com.ocode.anywherece.screens
 import android.util.Log
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.ocode.anywherece.data.DataOrException
-import com.ocode.anywherece.model.GetAnyResponse
 import com.ocode.anywherece.repository.AnywhereRepository
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.launch
