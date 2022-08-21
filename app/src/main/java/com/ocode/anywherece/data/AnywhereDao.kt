@@ -13,5 +13,5 @@ interface AnywhereDao {
     fun getInfo(): Flow<List<AnywhereListEntity>>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun insertInfo(vararg info: AnywhereListEntity)
+    suspend fun insertInfo(info: List<AnywhereListEntity>)
 }

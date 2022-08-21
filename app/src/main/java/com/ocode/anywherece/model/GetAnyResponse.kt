@@ -13,13 +13,9 @@ data class GetAnyResponse(
     val Entity: String,
     val Heading: String,
     val Image: String,
-    val ImageHeight: Int,
-    val ImageIsLogo: Int,
-    val ImageWidth: Int,
     val Infobox: String,
     val Redirect: String,
     val RelatedTopics: List<RelatedTopic>,
     val Results: List<Any>,
     val Type: String,
-    val meta: Meta
 )

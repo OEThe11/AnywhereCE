@@ -12,5 +12,5 @@ interface AnywhereAPI {
     suspend fun getAnyInfo(
         @Query("q") query : String = "the+wire+characters&format=json",
         @Query("format") format : String = "json"
-    ): Response<List<GetAnyResponse>>
+    ): Response<GetAnyResponse>
 }
