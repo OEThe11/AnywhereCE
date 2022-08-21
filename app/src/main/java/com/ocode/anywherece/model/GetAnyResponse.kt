@@ -1,6 +1,6 @@
 package com.ocode.anywherece.model
 
-data class GetWireResponse(
+data class GetAnyResponse(
     val Abstract: String,
     val AbstractSource: String,
     val AbstractText: String,

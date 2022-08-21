@@ -5,4 +5,6 @@ data class RelatedTopic(
     val Icon: Icon,
     val Result: String,
     val Text: String
-)
+){
+    val parts = Text.split(" - ", limit = 2)
+}
