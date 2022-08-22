@@ -31,11 +31,13 @@ class AnywhereRepository @Inject constructor(
     suspend fun anywhereInfo(): List<AnywhereListEntity>? {
         val request = api.getAnyInfo()
         if (request.isSuccessful){
-            val anyItems = request.body()!!.let {
-                AnywhereMapper.buildFrom(it)
+            val anyItems = request.body()!!.let{
+                it.RelatedTopics.forEach { item ->
+                    AnywhereMapper.buildFrom(item)
+                }
             }
-            anywhereDao.insertInfo(listOf(anyItems))
-            return (listOf(anyItems))
+            anywhereDao.insertInfo(anyItems)
+            return listOf(anyItems)
         }
         return null
     }

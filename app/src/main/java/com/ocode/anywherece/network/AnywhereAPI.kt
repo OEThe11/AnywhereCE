@@ -10,7 +10,7 @@ import javax.inject.Singleton
 interface AnywhereAPI {
     @GET(".")
     suspend fun getAnyInfo(
-        @Query("q") query : String = "the+wire+characters&format=json",
+        @Query("q") query : String = "the wire characters",
         @Query("format") format : String = "json"
     ): Response<GetAnyResponse>
 }
