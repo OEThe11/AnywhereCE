@@ -5,6 +5,7 @@ import com.ocode.anywherece.mapper.AnywhereMapper
 import com.ocode.anywherece.model.AnywhereListEntity
 import com.ocode.anywherece.network.AnywhereAPI
 import kotlinx.coroutines.flow.Flow
+import okhttp3.internal.notifyAll
 import javax.inject.Inject
 
 class AnywhereRepository @Inject constructor(
@@ -31,13 +32,13 @@ class AnywhereRepository @Inject constructor(
     suspend fun anywhereInfo(): List<AnywhereListEntity>? {
         val request = api.getAnyInfo()
         if (request.isSuccessful){
-            val anyItems = request.body()!!.let{
-                it.RelatedTopics.forEach { item ->
+           val anyItems = request.body()!!.let{
+                it.RelatedTopics.map { item ->
                     AnywhereMapper.buildFrom(item)
                 }
             }
             anywhereDao.insertInfo(anyItems)
-            return listOf(anyItems)
+            return anyItems
         }
         return null
     }

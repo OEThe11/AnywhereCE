@@ -11,7 +11,10 @@ object AnywhereMapper {
     fun buildFrom(response: RelatedTopic): AnywhereListEntity{
         return AnywhereListEntity(
             name = response.parts[0],
-            description = response.parts[1]
+            description = if (response.parts.size > 1)
+                response.parts[1]
+        else
+            " No Information Available "// last element does not have this field
         )
     }
 
