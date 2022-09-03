@@ -25,8 +25,8 @@ class AnywhereRepository @Inject constructor(
 //        return DataOrException(data = response)
 //    }
 
-    val feeds: Flow<List<AnywhereListEntity>>
-        get() = anywhereDao.getInfo()
+//    val feeds: Flow<List<AnywhereListEntity>>
+//        get() = anywhereDao.getInfo()
 
 
     suspend fun anywhereInfo(): List<AnywhereListEntity>? {

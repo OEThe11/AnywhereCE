@@ -18,11 +18,13 @@ import com.ocode.anywherece.widgets.SearchBar
 
 @Composable
 fun MainScreen(anyViewModel: AnyViewModel = hiltViewModel()){
-    val allItems by anyViewModel.anyInfoResults.collectAsState(initial = emptyList())
+    val allItems by anyViewModel.anyInfoResults.collectAsState()
 
-   Scaffold(
+   Scaffold(backgroundColor = MaterialTheme.colors.primaryVariant,
        topBar = {
-        SearchBar()
+        SearchBar(){
+            anyViewModel.searchAnywhereList(it)
+        }
        }, bottomBar = {
         AnyAppBar(elevation = 5.dp)
    }
